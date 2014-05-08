@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<project name="lattices-view" basedir="." default="zip">
+	<!-- Import checkstyle task -->
+	<taskdef resource="checkstyletask.properties" classpath="lib/style/checkstyle-5.7-all.jar" />
+
+	<property name="src.dir" value="src" />
+
+	<property name="build.dir" value="build" />
+	<property name="build.src.dir" value="${build.dir}/src" />
+	<property name="build.jar.dir" value="${build.dir}/jar" />
+
+	<property name="dist.dir" value="dist" />
+
+	<property name="zip.file" value="${ant.project.name}.zip" />
+
+	<target name="rebuild" depends="clean,zip" description="Rebuild entire project" />
+
+	<target name="test" depends="build,style" description="Check if build is correct" />
+
+	<target name="clean" description="Clean build directories">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete file="${zip.file}" />
+	</target>
+
+	<target name="build" description="Build all source files">
+		<mkdir dir="${build.src.dir}" />
+		<javac includeantruntime="false" srcdir="${src.dir}" destdir="${build.src.dir}">
+			<classpath>
+				<pathelement location="lib/jxl-2.6.jar" />
+				<pathelement location="lib/lattices.jar" />
+				<pathelement location="lib/svgSalamander.jar" />
+				<pathelement location="lib/swingx-all-1.6.4.jar" />
+			</classpath>
+			<!--compilerarg value="-Xlint" /-->
+		</javac>
+	</target>
+
+	<target name="jar" depends="build" description="Create jar file">
+		<mkdir dir="${build.jar.dir}" />
+		<jar destfile="${build.jar.dir}/${ant.project.name}.jar" basedir="${build.src.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="LatticesView" />
+				<attribute name="Class-Path" value="lib/jxl-2.6.jar lib/lattices.jar lib/svgSalamander.jar lib/swingx-all-1.6.4.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="style" description="Check style">
+		<checkstyle config="lib/style/style.xml">
+			<fileset dir="src" includes="LatticesView.java" />
+		</checkstyle>
+	</target>
+
+	<target name="dist" depends="jar" description="Create binary distribution">
+		<delete dir="${dist.dir}" />
+
+		<mkdir dir="${dist.dir}/lib" />
+		<copy todir="${dist.dir}" file="${build.jar.dir}/${ant.project.name}.jar" />
+		<copy todir="${dist.dir}/lib">
+			<file file="lib/jxl-2.6.jar" />
+			<file file="lib/lattices.jar" />
+			<file file="lib/svgSalamander.jar" />
+			<file file="lib/swingx-all-1.6.4.jar" />
+		</copy>
+
+		<echo file="${dist.dir}/lattices-view.bat" message="java -jar ${ant.project.name}.jar" />
+		<echo file="${dist.dir}/lattices-view.sh" message="#!/bin/sh${line.separator}java -jar $(dirname $0)/${ant.project.name}.jar" />
+		<chmod file="${dist.dir}/lattices-view.sh" perm="ugo+x" />
+	</target>
+
+	<target name="zip" depends="dist" description="Create zip file">
+		<zip destfile="${zip.file}" basedir="dist" />
+	</target>
+
+</project>
+
