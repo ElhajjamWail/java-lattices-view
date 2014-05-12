@@ -49,6 +49,7 @@
 	<target name="style" description="Check style">
 		<checkstyle config="lib/style/style.xml">
 			<fileset dir="src" includes="LatticesView.java" />
+			<!--fileset dir="src" includes="Controller/AboutAction.java" /-->
 		</checkstyle>
 	</target>
 
