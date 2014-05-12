@@ -16,12 +16,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
+ 
 /**
  *
  * @author smameri
  */
-public class AboutAction extends AbstractAction{
+public class AboutAction extends AbstractAction {
 private hmi window;
 
 /** Path of the project/jar directory */

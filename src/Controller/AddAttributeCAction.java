@@ -1,5 +1,5 @@
 /*
- * AddattributecAction.java
+ * AddattributeCAction.java
  *
  * Copyright: 2013-2014 Karell Bertet, France
  *
