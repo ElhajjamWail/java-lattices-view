@@ -29,11 +29,11 @@ public class ComboPopupISAction implements PopupMenuListener
     /**
      * Action permettant :<ul><li>D'ajouter un comboBox et une règle si l'action est "premise"</li><li>D'ajouter un comboBox et une règle si l'action est "conclusion"</li><li>De descendre la ligne vide et d'ajouter une règle avec une conclusion si l'action est "premisseEmpty"</li><li>De descendre la ligne vide et d'ajouter une règle avec une conclusion si l'action est "conclusionEmpty"</li></ul>
      * @param face
-     * Le panel.
+     * The panel.
      * @param action
-     * L'action.
+     * The action.
      * @param combo
-     * Le combo sur lequel l'action est utilisée.
+     * the combo which the action is used.
      */
     public ComboPopupISAction(ISInterface face, ISInterface.actionCombo action, SComboBox combo){
         this.action = action;

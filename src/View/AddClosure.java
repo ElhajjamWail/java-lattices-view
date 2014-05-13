@@ -579,7 +579,7 @@ public class AddClosure extends javax.swing.JFrame {
         context = window.getContextInterface().getContext();
          
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // initialisation des comboBox de l'onglet Context
+        // initialisation of comboBox of the Context tab
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         comboObservation.setModel(new ListComboBoxModel<Object>(Arrays.asList(context.getObservations().toArray())));
         comboAttribut.setModel(new ListComboBoxModel<Object>(Arrays.asList(context.getAttributes().toArray())));
@@ -588,7 +588,7 @@ public class AddClosure extends javax.swing.JFrame {
         AutoCompleteDecorator.decorate(comboAttribut);
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // initialisation des tableaux de l'onglet IS avec des comboBox
+        // initialisation of tables of IS tab with the comboBox
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         comboConclusionIS = new SComboBox(tableConclusionIS, is.getSet(), false);
         combopremiseIS = new SComboBox(tablePremiseIS, is.getSet(), false);   

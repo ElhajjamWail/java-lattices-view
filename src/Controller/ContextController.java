@@ -29,9 +29,9 @@ public class ContextController {
     /**
      * Ajoute l'élément sélectionné par le combo, dans un nouveau comboBox.
      * @param combo
-     * Le combo qui doit sélectionné l'élément.
+     * The combo who should select an element.
      * @param observation 
-     * Le comboBox est ajouté en fonction de cet observation.
+     * The comboBox is added in function of this observation.
      */
     public void addCombo(SComboBox combo, Comparable observation)
     {

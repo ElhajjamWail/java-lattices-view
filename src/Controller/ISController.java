@@ -26,11 +26,11 @@ public class ISController {
     public ISController(ISInterface face){this.face = face;}  
     
     /**
-     * Met à jour la ligne. Supprime le comboBox si celui-ci choisi l'élément null. Supprime la ligne s'il reste moins de 5 éléments (Ce combo y compris).
+     * Update the line. Delete the comboBox if it is choosed the element null. Delete the line if there is less than 5 elements (including this combo ).
      * @param parent
-     * Le parent.
+     * The parent.
      * @param isPremise 
-     * Si c'est une premisse ou une conclusion.
+     * If it is a premise or a conclusion.
      */
     public void updateRow(SComboBox combo, boolean isPremise)
     {

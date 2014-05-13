@@ -26,7 +26,7 @@ public class AddAttributeCAction extends AbstractAction
     private ContextInterface face;
     
     /**
-     * Permet d'ajouter un attribut dans le contexte, si celui-ci n'est pas vide ou de couleur grise (description).
+     * Adds an attribute in context, if it is not empty or gray (description).
      */
     public AddAttributeCAction(ContextInterface face){ this.face = face;}
     

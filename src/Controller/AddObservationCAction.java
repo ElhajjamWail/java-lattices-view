@@ -25,7 +25,7 @@ public class AddObservationCAction extends AbstractAction
 {
     private ContextInterface face;
     /**
-     * Permet d'ajouter une observation ainsi que sa ligne dans un contexte.
+     * Adds an observation and also the line in context.
      */
     public AddObservationCAction(ContextInterface face){ this.face = face;}
 

@@ -26,7 +26,7 @@ public class AddAttributeISAction extends AbstractAction
     private ISInterface face;
     
     /**
-    * Permet d'ajouter un attribut dans la fenêtre IS, si cet attribut n'est pas vide ou est de couleur grise (description).
+    * Adds an attribut in the window IS, if it isn't empty or gray (description).
     */
     public AddAttributeISAction(ISInterface face){this.face = face;}
     
