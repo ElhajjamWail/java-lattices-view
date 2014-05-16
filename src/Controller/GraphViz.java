@@ -1,3 +1,5 @@
+package Controller;
+
 // GraphViz.java - a simple API to call dot from Java programs
 
 /*$Id$*/
@@ -22,11 +24,11 @@
  *                                                                            *
  ******************************************************************************
  */
-package Controller;
 
-import View.hmi;
 import java.io.*;
 import javax.swing.JOptionPane;
+
+import View.hmi;
 
 /**
  * <dl>

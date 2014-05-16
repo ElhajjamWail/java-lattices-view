@@ -1,7 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AddattributeCAction.java
+ *
+ * Copyright: 2013-2014 Karell Bertet, France
+ *
+ * License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html CeCILL-B license
+ *
+ * This file is part of java-lattices-view, free package. You can redistribute it and/or modify
+ * it under the terms of CeCILL-B license.
  */
+
 package Controller;
 
 import View.ContextInterface;
@@ -19,7 +26,7 @@ public class AddAttributeCAction extends AbstractAction
     private ContextInterface face;
     
     /**
-     * Permet d'ajouter un attribut dans le contexte, si celui-ci n'est pas vide ou de couleur grise (description).
+     * Adds an attribute in context, if it is not empty or gray (description).
      */
     public AddAttributeCAction(ContextInterface face){ this.face = face;}
     

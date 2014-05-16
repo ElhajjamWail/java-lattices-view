@@ -49,11 +49,15 @@
 	<target name="style" description="Check style">
 		<checkstyle config="lib/style/style.xml">
 			<fileset dir="src" includes="LatticesView.java" />
+			<fileset dir="src" includes="Controller/AboutAction.java" />
+			<fileset dir="src" includes="Controller/AddAttributeCAction.java" />
+			<fileset dir="src" includes="Controller/AddAttributeISAction.java" />
 		</checkstyle>
 	</target>
 
 	<target name="dist" depends="jar" description="Create binary distribution">
 		<delete dir="${dist.dir}" />
+		
 
 		<mkdir dir="${dist.dir}/lib" />
 		<copy todir="${dist.dir}" file="${build.jar.dir}/${ant.project.name}.jar" />

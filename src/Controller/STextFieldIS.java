@@ -1,7 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * STextFieldIS.java
+ *
+ * Copyright: 2013-2014 Karell Bertet, France
+ *
+ * License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html CeCILL-B license
+ *
+ * This file is part of java-lattices-view, free package. You can redistribute it and/or modify
+ * it under the terms of CeCILL-B license.
  */
+
 package Controller;
 
 import View.ISInterface;
@@ -15,9 +22,9 @@ public class STextFieldIS extends STextField{
 
     ISInterface face;
     /**
-     * Ajoute, permet de Modifier et de supprimer un attribut. Voir description de STextField.
+     * Add, it allows us to edit and delete an attribute/observation for the view ContextInterface.for further information go to STextField desc.
      * @param text 
-     * Le texte de l'attribut à sa création.
+     * The text of the attribrute when we creat it.
      */
     public STextFieldIS(ISInterface face, String text){ 
         super(text);
@@ -29,7 +36,7 @@ public class STextFieldIS extends STextField{
         String attribute = this.getText().replaceAll(" ", "");
         if(!attribute.equals(getOldName()))
         {   
-            if(attribute.isEmpty()) //Si l'attribut est vide, on supprime, au sinon on met à jour
+            if(attribute.isEmpty()) //If the attribut is empty, we delete, else we update
             {
                 face.getIS().deleteElement(getOldName());
                 face.layout.removeItemInCombo(getOldName());
@@ -43,7 +50,7 @@ public class STextFieldIS extends STextField{
             }
         }
         else
-            this.setText(getOldName());//Si des espaces existait dans attribute, on les supprime.
+            this.setText(getOldName());//if the spaces exist in the attribute, it removes.
         editFocus(false);
     }
 

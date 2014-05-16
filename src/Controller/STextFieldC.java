@@ -1,7 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * STextFieldC.java
+ *
+ * Copyright: 2013-2014 Karell Bertet, France
+ *
+ * License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html CeCILL-B license
+ *
+ * This file is part of java-lattices-view, free package. You can redistribute it and/or modify
+ * it under the terms of CeCILL-B license.
  */
+
 package Controller;
 
 import View.ContextInterface;
@@ -21,11 +28,11 @@ import java.util.TreeSet;
         /**
          * Ajoute, permet de Modifier et de supprimer un attribut/observation pour la vue ContextInferface. Voir description de STextField.
          * @param face
-         * La vue.
+         * The view.
          * @param text 
-         * Le texte de l'attribut à sa création.
+         * The text of the attribrute when we creat it.
          * @param isAttribute
-         * true si c'est un attribut, false si c'est une observation.
+         * true if it is an attribute, false if it is an observation.
          */
         public STextFieldC(ContextInterface face, String text, boolean isAttribute)
         {

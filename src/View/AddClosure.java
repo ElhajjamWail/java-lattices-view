@@ -1,7 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * AddClosure.java
+ *
+ * Copyright: 2013-2014 Karell Bertet, France
+ *
+ * License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html CeCILL-B license
+ *
+ * This file is part of java-lattices-view, free package. You can redistribute it and/or modify
+ * it under the terms of CeCILL-B license.
  */
+
 package View;
 
 import java.util.Arrays;
@@ -572,7 +579,7 @@ public class AddClosure extends javax.swing.JFrame {
         context = window.getContextInterface().getContext();
          
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // initialisation des comboBox de l'onglet Context
+        // initialisation of comboBox of the Context tab
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         comboObservation.setModel(new ListComboBoxModel<Object>(Arrays.asList(context.getObservations().toArray())));
         comboAttribut.setModel(new ListComboBoxModel<Object>(Arrays.asList(context.getAttributes().toArray())));
@@ -581,7 +588,7 @@ public class AddClosure extends javax.swing.JFrame {
         AutoCompleteDecorator.decorate(comboAttribut);
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        // initialisation des tableaux de l'onglet IS avec des comboBox
+        // initialisation of tables of IS tab with the comboBox
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         comboConclusionIS = new SComboBox(tableConclusionIS, is.getSet(), false);
         combopremiseIS = new SComboBox(tablePremiseIS, is.getSet(), false);   

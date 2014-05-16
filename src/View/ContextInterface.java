@@ -1,7 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * ContextInterface.java
+ *
+ * Copyright: 2013-2014 Karell Bertet, France
+ *
+ * License: http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.html CeCILL-B license
+ *
+ * This file is part of java-lattices-view, free package. You can redistribute it and/or modify
+ * it under the terms of CeCILL-B license.
  */
+
 package View;
 
 import Controller.*;
@@ -38,28 +45,28 @@ public class ContextInterface extends JPanel{
        /* this.setText("observations : chien chat\nAttributes : moustache poilSoyeux poilTresTresSoyeux oeil\nchat : moustache\nchien :");*/
     }
     /**
-     * Retourne le contexte.
+     * Return the context.
      * @return 
-     * Le contexte.
+     * context.
      */
     public Context getContext(){ return context;}
     
     /**
-     * Modifie le contexte et met à jour la vue.
+     * edit the context and update the view.
      * @param newContext 
-     * Le nouveau contexte.
+     * The new context.
      */
     public void setContext(Context newContext){ context = newContext; setText();}
     
     /**
-     * Met à jour la vue en fonction du context.
+     * update the view in functionof the context.
      */
     private void setText()
     {
         removeAll();
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Ligne des observations
+        //Line of observations
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         for (Comparable o : context.getObservations())
             add(new STextFieldC(this, o.toString(), false), 0, 0);
@@ -70,7 +77,7 @@ public class ContextInterface extends JPanel{
  
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Ligne des attributs
+        //Line of attributs
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         for (Comparable a : context.getAttributes())
             add(new  STextFieldC(this, a.toString(), true), 1 , 0);
@@ -80,7 +87,7 @@ public class ContextInterface extends JPanel{
         add(new JLabel("Attributes     " + TWO_POINTS), 1 , 0);
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //les autres lignes
+        //the other lines
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         int i = 2;
         for (Comparable o : context.getObservations())
