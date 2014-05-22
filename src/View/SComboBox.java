@@ -33,15 +33,15 @@ public class SComboBox extends JComboBox<Object>{
      
     public Object oldItem = "";
     /**
-     * Le SComboBox ajoute ses items de façon alphabétique. De plus il ajoute l'élément null comme premier item. <br/>
-     * Ce comboBox ajoute une ligne dans le tableau si la dernière ligne du tableau a sélectionné un élement autre que null.<br/>
-     * Ce comboBox supprime la ligne auquel il est inclus si :<ul><li>Celle-ci a sélectionné l'élement null</li><li>Celle-ci n'est pas la dernière ligne du tableau</li></ul>
+     * The SComboBox adds its items alphabetically. In addition, it adds the null element as the first item. <br/>
+     * This comboBox adds a line in the table if the last row has selected an other element than null.<br/>
+     * This comboBox removes the line to which it is included if :<ul><li>It has selected the null element</li><li>it is not the last line of Table</li></ul>
      * @param table
-     * Le tableau où le comboBox est la cellule par défaut.
+     * The table where the ComboBox is the default cell.
      * @param set
-     * La liste des valeurs que doit prendre le comboBox.
+     * The list of values ​​must take comboBox.
      * @param decorate 
-     * Si le comboBox doit être autocompleté.
+     * If the ComboBox should be autocomplete.
      */
     public SComboBox(final JTable table, TreeSet<Comparable> set, Boolean decorate)
     {     
@@ -59,16 +59,16 @@ public class SComboBox extends JComboBox<Object>{
     } 
     
     /**
-     * Le SComboBox ajoute ses items de façon alphabétique. De plus il ajoute l'élément null comme premier item. <br/>
-     * Ce combo se supprime s'il prend la valeur null.
+     * The SComboBox adds its items alphabetically. In addition, it adds the null element as the first item. <br/>
+     * This combo is removed if it is null.
      * @param set
-     * La liste des valeurs que doit prendre le comboBox.
+     * The list of values ​​must take comboBox.
      * @param decorate 
-     * Si le comboBox doit être autocompleté.
+     * If the ComboBox should be autocomplete.
      * @param parent
-     * Le panel qui contient le comboBox.
+     * The panel that contains the ComboBox.
      * @param itemSelected
-     * L'élément qui doit être sélectionné par le combo.
+     * The element to be selected by the combo.
      */
     public SComboBox(TreeSet<Comparable> set, Boolean decorate, final ContextInterface parent, String itemSelected)
     {        
@@ -85,11 +85,11 @@ public class SComboBox extends JComboBox<Object>{
     }
     
     /**
-     * Le SComboBox ajoute ses items de façon alphabétique. De plus il ajoute l'élément null comme premier item. <br/>
+     * The SComboBox adds its items alphabetically. In addition, it adds the null element as the first item. <br/>
      * @param set
-     * La liste des valeurs que doit prendre le comboBox.
+     * The list of values ​​must take comboBox.
      * @param decorate 
-     * Si le comboBox doit être autocompleté.
+     * If the ComboBox should be autocomplete.
      */
     public SComboBox(TreeSet<Comparable> set, Boolean decorate, final ContextInterface parent, final Comparable observation)
     {
@@ -104,18 +104,18 @@ public class SComboBox extends JComboBox<Object>{
     }   
     
     /**
-     * Le SComboBox ajoute ses items de façon alphabétique. De plus il ajoute l'élément null comme premier item. <br/>
-     * Ce combo se supprime si il prend la valeur null.<br/>
-     * Ce combo supprime la ligne auquel il appartient s'il reste moins de 4 composants (lui y compris) sur cette ligne .<br/>
-     * Ce combo est autocomplété.
+     * The SComboBox adds its items alphabetically. In addition, it adds the null element as the first item.<br/>
+     * This combo is removed if it is null.<br/>
+     * This combo deletes the row to which it belongs if less than 4 components (including him) on this line.<br/>
+     * This combo is autocompleted.
      * @param set
-     * La liste des valeurs que doit prendre le comboBox.
+     * The list of values ​​must take comboBox.
      * @param parent
-     * Le parent qui doit être un ISInterface.
+     * The parent who must be a IsInterface.
      * @param isPremise
-     * Si c'est un combo mis en premisse ou en conclusion.
+     * If it is a combo set premise or conclusion.
      * @param itemSelected
-     * L'élément qui doit être sélectionné par le combo.
+     * The element to be selected by the combo.
      */
     public SComboBox(TreeSet<Comparable> set, final ISInterface parent, final boolean isPremise, String itemSelected)
     {        
@@ -132,11 +132,11 @@ public class SComboBox extends JComboBox<Object>{
     }
  
     /**
-     * Le SComboBox ajoute ses items de façon alphabétique. De plus il ajoute l'élément null comme premier item. <br/>
+     * The SComboBox adds its items alphabetically. In addition, it adds the null element as the first item. <br/>
      * @param set
-     * La liste des valeurs que doit prendre le comboBox.
+     * The list of values ​​must take comboBox.
      * @param decorate 
-     * Si le comboBox doit être autocompleté.
+     * If the ComboBox should be autocomplete.
      */
     public SComboBox(TreeSet<Comparable> set, Boolean decorate, final JPanel parent)
     {
@@ -147,16 +147,16 @@ public class SComboBox extends JComboBox<Object>{
     
 
     /**
-     * Ajoute l'objet de façon alphabétique.
+     * Adds the object alphabetically.
      * @param object 
-     * Objet à ajouté.
+     * Object to add.
      */
     @Override
     public void addItem(Object object)
     {
         int size = super.getItemCount();
 
-        for (int i=1; i<size; i++) //i=1 car il faut éviter le premier élément qui est null
+        for (int i=1; i<size; i++) //i=1 car il faut Ã©viter le premier Ã©lÃ©ment qui est null
             if (object.toString().compareToIgnoreCase(super.getItemAt(i).toString()) <= 0) // if object less than or equal obj
             {
                 super.insertItemAt(object, i);
@@ -167,11 +167,11 @@ public class SComboBox extends JComboBox<Object>{
     
       
     /**
-     * Rafraîchi la fenetre pour que la taille du combo soit adapter au texte.
+     * Refreshed the window to the size of the combo is fit the text.
      * @param parent 
-     * Le panel qui contient le comboBox.
+     * The panel that contains the ComboBox.
      * @param isRemoved
-     * Si true et si le combo sélectionne l'élément null alors le combo est supprimé. Si false Le combo ne sera pas supprimé.
+     * If true and if the combo selects the null element when the combo is deleted. If false combo will not be deleted.
      */   
     private void repaint(JPanel parent, boolean isRemoved)
     {
@@ -185,11 +185,11 @@ public class SComboBox extends JComboBox<Object>{
     }
     
     /**
-     * Initialise la liste des items, avec comme première valeur null ou none
+     * Initializes the list of items, with the first-null or none
      * @param set 
-     * La liste des items, en dehors du premier item.
+     * The list of items
      * @param nullable
-     * Si le premier élément doit être null, au sinon c'est "<< none >>".
+     * If the first element must be null, else it is to "<< none >>".
      */
     private void initialiseItem(TreeSet<Comparable> set, boolean nullable)
     {
@@ -202,9 +202,9 @@ public class SComboBox extends JComboBox<Object>{
     }
     
     /**
-     * Permet d'ajouter l'autocompletion sur le comboBox
+     * Adds autocompletion on comboBox
      * @param decorate 
-     * Permet l'autoCompletion
+     * Enables autocompletion
      */
     private void decorated(Boolean decorate)
     {
@@ -213,9 +213,9 @@ public class SComboBox extends JComboBox<Object>{
     }
    
     /**
-     * Permet d'ajouter ou de supprimer une ligne du tableau "table" en fonction du comboBox et des autres lignes du tableau.
+     * To add or delete a row in the table "table" based on ComboBox and other table rows.
      * @param table
-     * Le tableau où le comboBox est la cellule par défaut.
+     * The table where the ComboBox is the default cell.
      */
     private void ancestorTable(JTable table)
     {
@@ -225,12 +225,12 @@ public class SComboBox extends JComboBox<Object>{
         if(table.getValueAt(index, 0) != AddClosure.NONE)
         {
             if(table.getRowCount() == index+1)
-                def.addRow(new Object[]{AddClosure.NONE});//Si ce n'est pas l'élément none et si c'est la dernière ligne qui est modifié
+                def.addRow(new Object[]{AddClosure.NONE});//If this element is not none and if it is the last line that is modified
         }
         else
         {
             if(table.getRowCount() != index+1)
-                def.removeRow(index);// Si c'est l'élément none et que ce n'est pas la dernière ligne du tableau
+                def.removeRow(index);// If this element is none and that is not the last line of Table
         }
     }  
 }

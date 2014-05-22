@@ -52,18 +52,18 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Retourne le IS.
+     * Return the IS.
      * @return 
-     * Le IS.
+     * The IS.
      */
     public ImplicationalSystem getIS(){ return is;}
     
     /**
-     * Modifie le IS.
+     * Edit the IS.
      * @param newIS 
-     * Le nouveau IS.
+     * the new IS.
      * @param closed
-     * Si closedSetLattice.
+     * if closedSetLattice.
      */
     public void setIS(ImplicationalSystem newIS, boolean closed)
     {
@@ -75,14 +75,14 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Agence L'IS avec des composants.
+     * Agency the IS with the components.
      */
     private void setText()
     {
         removeAll();
         
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Ligne des attributs
+        //Line of attributes
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         for(Comparable c : is.getSet())
             add(new STextFieldIS(this, c.toString()), 0, 0);
@@ -92,14 +92,14 @@ public class ISInterface extends JPanel{
         txtAttribute.setVisible(true);
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Lignes des règles
+        //Line of the rules
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         int i = 1;
         for (Rule r : is.getRules())
-            addRule(i++, r); // Le i s'incrémente après l'ajout de la règle.
+            addRule(i++, r); // the i increment after adding a rule.
 
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        //Ligne vide
+        //Empty line
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
         lineEmpty(i, actionCombo.conclusionEmpty);
         addArrow( i);
@@ -107,9 +107,9 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Ajoute l'élément "->" comme premier élément à la ligne voulue. 
+     * Add an element "->" like the first element to the desired line . 
      * @param row 
-     * La ligne où l'élément est placé.
+     * The line where the element is placed.
      */
     private void addArrow(int row)
     {
@@ -120,11 +120,11 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Ajoute un ComboBox permettant d'ajouter une nouvelle ligne. Il peut être mis soit en prémisse ou soit en conclusion en fonction de <b>action</b>.
+     * Add a ComboBox to add a new line. It can be put in premise or in conclusionin function of <b>action</b>.
      * @param row
-     * La ligne où elle doit être insérer.
+     * The line should be insert.
      * @param action 
-     * Permet de choisir si c'est en premisse ou en conclusion qu'il est insérer.
+     * To choose if it's premise or a conclusion which its insert.
      */
     private void lineEmpty(int row, actionCombo action)
     {
@@ -134,31 +134,31 @@ public class ISInterface extends JPanel{
     }
     
      /**
-     * Ajoute une règle à la ligne donnée.
+     * Add a rule to a given line.
      * @param row
-     * L'emplacement de la règle dans le layout.
+     * The location of the rule in the layout.
      * @param r 
-     * Une règle.
+     * The rule.
      */
     public void addRule(int row, Rule r)
     {
-        //Les Conclusions
+        //The Conclusions
         linePorC(row, r.getConclusion(), false);
 
         addArrow(row);
                 
-        //Les premisses
+        //The premises
         linePorC(row, r.getPremise(), true);
     }
     
     /**
-     * Ajoute soit des premisses soit des conclusions.
+     * Adds the premises or the conclusions.
      * @param row 
-     * La position dans le layout.
+     * The position in the layout.
      * @param set
-     * La liste des attributs.
+     * The list of attributes.
      * @param isPremise
-     * Si c'est en conclusion ou premisse que seront ajouté les prochains attributs sur cette règle.
+     * If it's in conclusion or in premise which its will be added the next attributes on this rule.
      */
     private void linePorC(int row, TreeSet<Comparable> set, boolean isPremise)
     {
@@ -187,7 +187,7 @@ public class ISInterface extends JPanel{
         String[] lines = text.split("\n");
         try{
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //Ligne des attributs
+            //Line of attributes
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             String[] attributes = lines[0].split(" ");
 
@@ -201,13 +201,13 @@ public class ISInterface extends JPanel{
             txtAttribute.setVisible(true);
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //Lignes des règles
+            //Lines of rules
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             for(int line = 1; line < lines.length; line++)
                 addLine(line, lines[line]);
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //Ligne vide
+            //Empty line
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             lineEmpty(lines.length, actionCombo.conclusionEmpty);
             addArrow(lines.length);
@@ -218,11 +218,11 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Ajoute une ligne autre que la ligne des attributs.
+     * Adds an other line in addition to the lines of attributes.
      * @param row
-     * L'emplacement de la ligne dans le layout.
+     * The location of the line in the layout.
      * @param line 
-     * Cette ligne doit être de la forme : "a b -> c d e".
+     * This line must be in the form : "a b -> c d e".
      * @deprecated 
      */
     private void addLine(int row, String line)
@@ -246,15 +246,15 @@ public class ISInterface extends JPanel{
     }
     
     /**
-     * Ajoute un bout de ligne soit en premisse soit en conclusion.
+     * Adds a piece of the line in premise or in conclusion.
      * @param attributes
-     * Le bout de ligne a ajouté, doit être de la forme : "a b c".
+     * The piece of the line added, must be of the form : "a b c".
      * @param row 
-     * La position dans le layout.
+     * The position in the layout.
      * @param rule
-     * La règle dans laquelle sont ajouté les attributs.
+     * The rule in which are added the attributes.
      * @param isPremise
-     * Si c'est en conclusion ou premisse que sont ajouté les attributs.
+     * If it is in conclusion or premise that are added attributes.
      * @deprecated 
      */
     private void LinePorC(String attributes, final int row, Rule rule, boolean isPremise)

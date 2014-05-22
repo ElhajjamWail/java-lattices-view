@@ -25,7 +25,7 @@ public class HintTextField extends JTextField implements FocusListener {
     private final String hint;
 
     /**
-     * Un JtextField avec une description.
+     * JtextField with a description.
      */
     public HintTextField(final String hint)
     {

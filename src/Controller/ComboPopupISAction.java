@@ -27,7 +27,7 @@ public class ComboPopupISAction implements PopupMenuListener
     private SComboBox combo;
 
     /**
-     * Action permettant :<ul><li>D'ajouter un comboBox et une règle si l'action est "premise"</li><li>D'ajouter un comboBox et une règle si l'action est "conclusion"</li><li>De descendre la ligne vide et d'ajouter une règle avec une conclusion si l'action est "premisseEmpty"</li><li>De descendre la ligne vide et d'ajouter une règle avec une conclusion si l'action est "conclusionEmpty"</li></ul>
+     * Action to :<ul><li>add a comboBox and a rule if the action is "premise"</li><li>add a comboBox and a rule if the action is "conclusion"</li><li>lower the empty line and add a rule with a conclusion if the action is "premisseEmpty"</li><li>lower the empty line and add a rule with a conclusion if the action is "conclusionEmpty"</li></ul>
      * @param face
      * The panel.
      * @param action

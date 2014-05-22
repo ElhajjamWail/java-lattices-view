@@ -38,14 +38,14 @@ public class hmi extends JFrame
     public CheckBoxesFrame checkBoxesFrame;
     public JSplitPane pan1;
     public JSplitPane pan2;
-    public JSplitPane pan3;//Changer la position de chaque composant
+    public JSplitPane pan3;//Changing the position of each component
     public JSplitPane pan6;
     public JSplitPane pan7;
     public JSplitPane pan8;
     public JSplitPane pan9;
     private JTabbedPane onglets;
     private JPanel pan ;
-    private JScrollPane spane1;//Position de l'image si elle dépasse de la fenetre
+    private JScrollPane spane1;//The position of the image if it exceeds the window
     private JScrollPane spane2;
     private JScrollPane spane0;
     private JScrollPane spane3;

@@ -95,11 +95,11 @@ public class ContextInterface extends JPanel{
     }
     
     /**
-     * Ajoute une ligne avec une observation et ses attributs, du type : "a : b c d"
+     * Add a line with an observation and  attributes, of the type : "a : b c d"
      * @param row
-     * La ligne de la ligne.
+     * The line of the line.
      * @param o 
-     * L'observation.
+     * The observation.
      */
     public void addRow(final int row, final Comparable o)
     {
@@ -113,9 +113,9 @@ public class ContextInterface extends JPanel{
     
     
     /**
-     * Recommence toute la vue en fonction du texte.
+     * Restart all the view in function of the text.
      * @param text 
-     * Il faut que ca soit un context.toString().
+     * It has to be a context.toString().
      * @deprecated 
      */
     private void setText(String text)
@@ -126,7 +126,7 @@ public class ContextInterface extends JPanel{
         
         try{
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //Ligne des observations
+            //Line of observations
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             String[] observation = lines[0].split(TWO_POINT);
             String[] observations = observation[1].split(" ");
@@ -144,7 +144,7 @@ public class ContextInterface extends JPanel{
 
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //Ligne des attributs
+            //Line of attributes
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             String[] attributes = lines[1].split(TWO_POINT);
 
@@ -162,7 +162,7 @@ public class ContextInterface extends JPanel{
 
 
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-            //les autres lignes
+            //the other lines
             //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             for(int line = 2; line < lines.length; line++)
                 addRowed(line, lines[line]);
@@ -171,12 +171,12 @@ public class ContextInterface extends JPanel{
     }
     
     /**
-     * Ajoute une ligne du type : "chat : moustache poilSoyeux"<br>
-     * L'observation et les deux points sont obligatoires, pas les attributs
+     * Add a line of the type : "chat : moustache poilSoyeux"<br>
+     * the observation and the two points are obligatory, not attributes
      * @param row
-     * La ligne de la ligne
+     * The line of the line
      * @param line 
-     * La ligne à ajoutée
+     * The line to add
      * @deprecated 
      */
     private void addRowed(final int row, String line)
